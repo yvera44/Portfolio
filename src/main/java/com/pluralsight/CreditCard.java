@@ -1,14 +1,9 @@
-package com.pluralsight.finance;
+package com.pluralsight;
 
 public class CreditCard extends Account {
 
     public CreditCard(String name, String accountNumber, double balance) {
         super(name, accountNumber, balance);
-    }
-
-    @Override
-    public double getValue() {
-        return getBalance();
     }
 
     public double charge(double amount){
@@ -21,5 +16,9 @@ public class CreditCard extends Account {
         double newBalance = getBalance() - amount;
         setBalance(newBalance);
         return newBalance;
+    }
+    @Override
+    public double getValue() {
+        return getBalance();
     }
 }
