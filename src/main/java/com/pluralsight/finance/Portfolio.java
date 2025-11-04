@@ -1,17 +1,17 @@
 package com.pluralsight.finance;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Portfolio {
 
     private String name;
     private String owner;
-    private List<Valuable> assets;
+    private ArrayList<Valuable> assets;
 
-    public Portfolio(String name, String owner) {
+    public Portfolio(String name, String owner, ArrayList<Valuable> assets) {
         this.name = name;
         this.owner = owner;
+        this.assets = assets;
     }
 
     public void add(Valuable asset) {
@@ -19,6 +19,15 @@ public class Portfolio {
     }
 
     public double getValue(){
+        //Loop through the Valuables in ArrayList asset
+        //keep a total
+        double total = 0;
+        for (Valuable valuable : assets){
+            //add everything up
+            total += valuable.getValue();
+
+        }
+        //return the total
         return getValue();
     }
 }
